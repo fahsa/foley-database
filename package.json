@@ -1,0 +1,32 @@
+{
+  "name": "foley-database",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --prod",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^4.4.6",
+    "@angular/common": "^4.4.6",
+    "@angular/compiler": "^4.4.6",
+    "@angular/core": "^4.4.6",
+    "@angular/forms": "^4.4.6",
+    "@angular/http": "^4.4.6",
+    "@angular/platform-browser": "^4.4.6",
+    "@angular/platform-browser-dynamic": "^4.4.6",
+    "@angular/router": "^4.4.6",
+    "angularfire2": "^4.0.0-rc0",
+    "firebase": "^3.9.0",
+    "rxjs": "^5.4.2"
+  },
+  "devDependencies": {
+    "@angular/cli": "1.4.9",
+    "@angular/compiler-cli": "^4.4.6"
+  }
+}
