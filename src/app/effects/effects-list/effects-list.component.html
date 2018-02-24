@@ -1,0 +1,9 @@
+<h1>Effects</h1>
+
+<div *ngFor="let effect of effects | async" style="width: 300px;">
+	<effect-details [effect]='effect'></effect-details>
+</div>
+
+<div>
+	<button type="button" class="button btn-danger" (click)='deleteEffects()'>Delete All</button>
+</div>

@@ -1,0 +1,22 @@
+<div *ngIf="effect">
+	<div>
+		<label>Name: </label> {{effect.name}}
+	</div>
+	<div>
+		<label>Category: </label> {{effect.category}}
+	</div>
+	<div>
+		<label>Path: </label> {{effect.path}}
+	</div>
+  <div>
+    <label>Search Terms: </label> {{effect.terms}}
+  </div>
+
+	<!-- <span class="button is-small btn-primary" *ngIf='effect.active' (click)='updateActive(false)'>Inactive</span>
+
+	<span class="button is-small btn-primary"*ngIf='!effect.active' (click)='updateActive(true)'>Active</span> -->
+
+	<span class="button is-small btn-danger" (click)='deleteEffect()'>Delete</span>
+
+	<hr/>
+</div>
