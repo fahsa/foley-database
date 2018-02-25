@@ -3,5 +3,5 @@ export class Effect {
   name: string;
   category: string;
   path: string;
-  terms: string[];
+  tags: string[];
 }

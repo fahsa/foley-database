@@ -29,6 +29,7 @@ export class EffectService {
     this.effects.remove(key).catch(error => this.handleError(error));
   }
 
+  // Pagination
   // getEffects(numberItems, startKey?): FirebaseListObservable<Effect[]> {
   //   this.effects = this.db.list(this.dbPath, {
   //     query: {
@@ -58,6 +59,7 @@ export class EffectService {
     });
   }
 
+  // Deletion
   // deleteAll(): void {
   //   this.effects.remove().catch(error => this.handleError(error));
   // }

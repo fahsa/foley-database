@@ -14,18 +14,22 @@ import * as ARR from 'lodash';
 export class EffectsListComponent implements OnInit {
 
   effects: any;
+  subscription: any;
+
+  // Pagination
   // numberItems = 10;
   // nextKey: any;
   // prevKeys: any[] = [];
-  subscription: any;
 
   constructor(private effectService: EffectService) {}
 
   ngOnInit() {
     this.effects = this.effectService.getEffects();
+    // Pagination
     // this.getEffectsList();
   }
 
+  // Pagination
   // getEffectsList(key?) {
   //   if (this.subscription) this.subscription.unsubscribe()
   //
@@ -47,6 +51,7 @@ export class EffectsListComponent implements OnInit {
   //   this.getEffectsList(prevKey)
   // }
 
+  // Deletion
   // deleteEffects() {
   //   this.effectService.deleteAll()
   // }

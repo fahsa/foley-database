@@ -21,8 +21,9 @@ export class EffectDetailsComponent implements OnInit {
   //   this.effectService.updateEffect(this.effect.$key, {active: isActive})
   // }
 
-  deleteEffect() {
-    this.effectService.deleteEffect(this.effect.$key)
-  }
+  // Deletion
+  // deleteEffect() {
+  //   this.effectService.deleteEffect(this.effect.$key)
+  // }
 
 }
