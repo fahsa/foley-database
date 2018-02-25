@@ -29,13 +29,20 @@ export class EffectService {
     this.effects.remove(key).catch(error => this.handleError(error));
   }
 
-  getEffects(numberItems, startKey?): FirebaseListObservable<Effect[]> {
+  // getEffects(numberItems, startKey?): FirebaseListObservable<Effect[]> {
+  //   this.effects = this.db.list(this.dbPath, {
+  //     query: {
+  //       orderByKey: true,
+  //       startAt: startKey,
+  //       limitToFirst: numberItems + 1
+  //     }
+  //   });
+  //   return this.effects;
+  // }
+
+  getEffects(query = {}): FirebaseListObservable<Effect[]> {
     this.effects = this.db.list(this.dbPath, {
-      query: {
-        orderByKey: true,
-        startAt: startKey,
-        limitToFirst: numberItems + 1
-      }
+      query: query
     });
     return this.effects;
   }
@@ -51,9 +58,9 @@ export class EffectService {
     });
   }
 
-  deleteAll(): void {
-    this.effects.remove().catch(error => this.handleError(error));
-  }
+  // deleteAll(): void {
+  //   this.effects.remove().catch(error => this.handleError(error));
+  // }
 
   private handleError(error) {
     console.log(error);
