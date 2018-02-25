@@ -1,8 +1,11 @@
 <h1>Effects</h1>
 
-<div *ngFor="let effect of effects | async" style="width: 300px;">
+<div *ngFor="let effect of effects" style="width: 300px;">
 	<effect-details [effect]='effect'></effect-details>
 </div>
+
+<button (click)="onPrev()" *ngIf='prevKeys?.length'>Prev</button>
+<button (click)="onNext()" *ngIf='nextKey'>Next</button>
 
 <div>
 	<button type="button" class="button btn-danger" (click)='deleteEffects()'>Delete All</button>

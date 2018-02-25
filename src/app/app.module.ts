@@ -14,13 +14,15 @@ import { EffectDetailsComponent } from './effects/effect-details/effect-details.
 import { CreateEffectComponent } from './effects/create-effect/create-effect.component';
 
 import { EffectService } from './effects/effect.service';
+import { SearchEffectsComponent } from './effects/search-effects/search-effects.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EffectsListComponent,
     EffectDetailsComponent,
-    CreateEffectComponent
+    CreateEffectComponent,
+    SearchEffectsComponent
   ],
   imports: [
     BrowserModule,

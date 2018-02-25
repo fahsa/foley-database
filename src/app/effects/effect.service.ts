@@ -29,11 +29,26 @@ export class EffectService {
     this.effects.remove(key).catch(error => this.handleError(error));
   }
 
-  getEffectsList(query = {}): FirebaseListObservable<Effect[]> {
+  getEffects(numberItems, startKey?): FirebaseListObservable<Effect[]> {
     this.effects = this.db.list(this.dbPath, {
-      query: query
+      query: {
+        orderByKey: true,
+        startAt: startKey,
+        limitToFirst: numberItems + 1
+      }
     });
     return this.effects;
+  }
+
+  findEffects(start, end): FirebaseListObservable<Effect[]> {
+    return this.db.list(this.dbPath, {
+      query: {
+        orderByChild: 'name',
+        limitToFirst: 6,
+        startAt: start,
+        endAt: end
+      }
+    });
   }
 
   deleteAll(): void {
