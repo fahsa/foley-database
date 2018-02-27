@@ -1,9 +1,9 @@
-<h3>Find Effects By Name</h3>
-<input type="text" (keyup)="search($event)" placeholder="enter name" class="input">
+<h3>Search Effects</h3>
+<input type="text" (keyup)="search($event)" placeholder="enter text" class="input">
 
 <ul>
 	<li *ngFor="let effect of effects">
-		<h4>{{effect.name}} - Category: {{effect.category}} - Path:	{{effect.path}}</h4>
+		<h4>{{effect.name}} - Category: {{effect.category}} - Tag:	{{effect.tag}}</h4>
 	</li>
 </ul>
 

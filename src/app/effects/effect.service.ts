@@ -51,8 +51,7 @@ export class EffectService {
   findEffects(start, end): FirebaseListObservable<Effect[]> {
     return this.db.list(this.dbPath, {
       query: {
-        orderByChild: 'name',
-        limitToFirst: 6,
+        orderByChild: 'tag',
         startAt: start,
         endAt: end
       }
