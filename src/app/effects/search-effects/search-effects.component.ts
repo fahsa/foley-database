@@ -23,8 +23,14 @@ export class SearchEffectsComponent implements OnInit {
 
   search($event) {
       const queryText = $event.target.value
-      this.startWith.next(queryText)
-      this.endWith.next(queryText + '\uf8ff')
+      if (queryText == '') {
+        this.startWith.next(' ')
+        this.endWith.next(' ')
+      }
+      else {
+        this.startWith.next(queryText)
+        this.endWith.next(queryText + '\uf8ff')
+      }
   }
 
 }
