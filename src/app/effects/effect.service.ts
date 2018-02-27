@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Effect } from './effect';
 
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import * as Lodash from 'lodash';
+
 @Injectable()
 export class EffectService {
 
@@ -48,14 +52,26 @@ export class EffectService {
     return this.effects;
   }
 
-  findEffects(start, end): FirebaseListObservable<Effect[]> {
+  // findEffects(start, end): FirebaseListObservable<Effect[]> {
+  //   return this.db.list(this.dbPath, {
+  //     query: {
+  //       orderByChild: 'tag',
+  //       startAt: start,
+  //       endAt: end
+  //     }
+  //   });
+  // }
+
+  findEffects(start, end): Observable<any> {
     return this.db.list(this.dbPath, {
       query: {
         orderByChild: 'tag',
         startAt: start,
         endAt: end
       }
-    });
+    }).map(_effects => Lodash.uniqBy(_effects, function(a) {
+      return a.name
+    }));
   }
 
   // Deletion

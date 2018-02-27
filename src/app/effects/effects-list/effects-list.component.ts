@@ -4,8 +4,6 @@ import { FirebaseListObservable } from 'angularfire2/database';
 import { EffectService } from '../effect.service';
 import { Effect } from '../effect';
 
-import * as ARR from 'lodash';
-
 @Component({
   selector: 'effects-list',
   templateUrl: './effects-list.component.html',
