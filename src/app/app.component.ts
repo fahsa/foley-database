@@ -9,7 +9,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 })
 
 export class AppComponent {
-  title = 'Foley Database';
+  title = 'Sound Effects Database';
   //description = 'Angular4-Firebase Demo';
 
   itemValue = '';
