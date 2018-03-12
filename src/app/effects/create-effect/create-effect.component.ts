@@ -34,7 +34,7 @@ export class CreateEffectComponent implements OnInit {
     var copy = this.effect;
     var list = this.effect.tag.split(',');
     for (let i of list) {
-      var tag = i;
+      var tag = i.trim();
       this.effect = copy;
       this.effect.tag = tag;
       this.save();
