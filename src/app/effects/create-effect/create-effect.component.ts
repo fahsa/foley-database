@@ -31,6 +31,13 @@ export class CreateEffectComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    this.save();
+    var copy = this.effect;
+    var list = this.effect.tag.split(',');
+    for (let i of list) {
+      var tag = i;
+      this.effect = copy;
+      this.effect.tag = tag;
+      this.save();
+    };
   }
 }
