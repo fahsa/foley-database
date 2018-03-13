@@ -1,9 +1,12 @@
-<h1>Effects</h1>
+<h3>Effects by Category</h3>
 
-<div *ngFor="let effect of effects | async" style="width: 300px;">
+<!-- <div *ngFor="let effect of effects | async" style="width: 300px;">
 	<effect-details [effect]='effect'></effect-details>
-</div>
+</div> -->
 
+<div *ngFor="let category of categories | async" style="width: 300px;">
+	<category-details [category]='category'></category-details>
+</div>
 <!-- Pagination  -->
 
 <!-- <div *ngFor="let effect of effects" style="width: 300px;">

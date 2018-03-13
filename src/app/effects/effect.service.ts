@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Effect } from './effect';
+import { Category } from './category';
 
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -9,15 +10,18 @@ import * as Lodash from 'lodash';
 @Injectable()
 export class EffectService {
 
-  private dbPath: string = '/effects';
+  private dbEffectPath: string = '/effects';
+  private dbCategoryPath: string = '/categories';
 
   effect: FirebaseObjectObservable<Effect> = null;
   effects: FirebaseListObservable<Effect[]> = null;
+  category: FirebaseObjectObservable<Category> = null;
+  categories: FirebaseListObservable<Category[]> = null;
 
   constructor(private db: AngularFireDatabase) {}
 
   getEffect(key: string): FirebaseObjectObservable<Effect> {
-    this.effect = this.db.object(`${this.dbPath}/${key}`);
+    this.effect = this.db.object(`${this.dbEffectPath}/${key}`);
     return this.effect;
   }
 
@@ -35,7 +39,7 @@ export class EffectService {
 
   // Pagination
   // getEffects(numberItems, startKey?): FirebaseListObservable<Effect[]> {
-  //   this.effects = this.db.list(this.dbPath, {
+  //   this.effects = this.db.list(this.dbEffectPath, {
   //     query: {
   //       orderByKey: true,
   //       startAt: startKey,
@@ -46,14 +50,21 @@ export class EffectService {
   // }
 
   getEffects(query = {}): FirebaseListObservable<Effect[]> {
-    this.effects = this.db.list(this.dbPath, {
+    this.effects = this.db.list(this.dbEffectPath, {
       query: query
     });
     return this.effects;
   }
 
+  getCategories(query = {}): FirebaseListObservable<Category[]> {
+    this.categories = this.db.list(this.dbCategoryPath, {
+      query: query
+    });
+    return this.categories;
+  }
+
   // findEffects(start, end): FirebaseListObservable<Effect[]> {
-  //   return this.db.list(this.dbPath, {
+  //   return this.db.list(this.dbEffectPath, {
   //     query: {
   //       orderByChild: 'tag',
   //       startAt: start,
@@ -63,7 +74,7 @@ export class EffectService {
   // }
 
   findEffects(start, end): Observable<any> {
-    return this.db.list(this.dbPath, {
+    return this.db.list(this.dbEffectPath, {
       query: {
         orderByChild: 'tag',
         startAt: start,

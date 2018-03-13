@@ -10,7 +10,7 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 
 import { EffectsListComponent } from './effects/effects-list/effects-list.component';
-import { EffectDetailsComponent } from './effects/effect-details/effect-details.component';
+import { CategoryDetailsComponent } from './effects/category-details/category-details.component';
 import { CreateEffectComponent } from './effects/create-effect/create-effect.component';
 
 import { EffectService } from './effects/effect.service';
@@ -20,7 +20,7 @@ import { SearchEffectsComponent } from './effects/search-effects/search-effects.
   declarations: [
     AppComponent,
     EffectsListComponent,
-    EffectDetailsComponent,
+    CategoryDetailsComponent,
     CreateEffectComponent,
     SearchEffectsComponent
   ],

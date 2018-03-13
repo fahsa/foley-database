@@ -3,6 +3,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 
 import { EffectService } from '../effect.service';
 import { Effect } from '../effect';
+import { Category } from '../category';
 
 @Component({
   selector: 'effects-list',
@@ -12,6 +13,7 @@ import { Effect } from '../effect';
 export class EffectsListComponent implements OnInit {
 
   effects: any;
+  categories: any;
   subscription: any;
 
   // Pagination
@@ -23,6 +25,7 @@ export class EffectsListComponent implements OnInit {
 
   ngOnInit() {
     this.effects = this.effectService.getEffects();
+    this.categories = this.effectService.getCategories();
     // Pagination
     // this.getEffectsList();
   }
