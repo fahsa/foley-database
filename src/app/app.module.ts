@@ -9,6 +9,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 
+import { CategoryListComponent } from './effects/category-list/category-list.component';
 import { EffectsListComponent } from './effects/effects-list/effects-list.component';
 import { CategoryDetailsComponent } from './effects/category-details/category-details.component';
 import { CreateEffectComponent } from './effects/create-effect/create-effect.component';
@@ -19,6 +20,7 @@ import { SearchEffectsComponent } from './effects/search-effects/search-effects.
 @NgModule({
   declarations: [
     AppComponent,
+    CategoryListComponent,
     EffectsListComponent,
     CategoryDetailsComponent,
     CreateEffectComponent,

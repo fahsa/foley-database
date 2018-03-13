@@ -1,3 +1,4 @@
+import { CategoryListComponent } from './effects/category-list/category-list.component';
 import { CreateEffectComponent } from './effects/create-effect/create-effect.component';
 import { EffectsListComponent } from './effects/effects-list/effects-list.component';
 import { SearchEffectsComponent } from './effects/search-effects/search-effects.component';
@@ -7,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {path: '', redirectTo: 'effects', pathMatch: 'full'},
+  {path: 'categories', component: CategoryListComponent},
   {path: 'effects', component: EffectsListComponent},
   {path: 'add', component: CreateEffectComponent},
   {path: 'find', component: SearchEffectsComponent},
