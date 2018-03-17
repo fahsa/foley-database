@@ -1,14 +1,14 @@
 <div class="container-fluid">
-  <div style="color: blue;">
+  <div id="title">
     <h1>{{title}}</h1>
     <!-- <h3>{{description}}</h3> -->
   </div>
 
-  <nav>
-		<a routerLink="categories" class="btn btn-primary active" role="button" routerLinkActive="active">Effects</a>
+  <nav id="nav">
+		<a routerLink="categories" class="btn btn-primary" role="button" routerLinkActive="active">Effects</a>
 		<!-- <a routerLink="effects" class="btn btn-primary active" role="button" routerLinkActive="active">Effects</a> -->
-		<a routerLink="add" class="btn btn-primary active" role="button" routerLinkActive="active">Add</a>
-    <a routerLink="find" class="btn btn-primary active" role="button" routerLinkActive="active">Search</a>
+		<a routerLink="add" class="btn btn-primary" role="button" routerLinkActive="active">Add</a>
+    <a routerLink="find" class="btn btn-primary" role="button" routerLinkActive="active">Search</a>
 	</nav>
 	<router-outlet></router-outlet>
 
