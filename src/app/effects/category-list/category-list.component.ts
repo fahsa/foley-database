@@ -12,7 +12,7 @@ import { Category } from '../category';
 })
 export class CategoryListComponent implements OnInit {
 
-  // effects: any;
+  effects: any;
   categories: any;
   subscription: any;
 
@@ -24,7 +24,7 @@ export class CategoryListComponent implements OnInit {
   constructor(private effectService: EffectService) {}
 
   ngOnInit() {
-    // this.effects = this.effectService.getEffects();
+    this.effects = this.effectService.getEffects();
     this.categories = this.effectService.getCategories();
     // Pagination
     // this.getEffectsList();
