@@ -56,6 +56,11 @@ export class EffectService {
     return this.effects;
   }
 
+  getCategory(key: string): FirebaseObjectObservable<Category> {
+    this.category = this.db.object(`${this.dbCategoryPath}/${key}`);
+    return this.category;
+  }
+
   getCategories(query = {}): FirebaseListObservable<Category[]> {
     this.categories = this.db.list(this.dbCategoryPath, {
       query: query

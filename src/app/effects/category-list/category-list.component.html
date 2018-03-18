@@ -1,7 +1,10 @@
 <h3 id="category-header">Effects by Category</h3>
 
 <div *ngFor="let category of categories | async" style="width: 300px;">
-	<category-details [category]='category'></category-details>
+	<!-- <category-details [category]='category'></category-details> -->
+	<a routerLink="/effects/{{category.$key}}">
+		{{category.$key}}
+	</a>
 </div>
 <!-- Pagination  -->
 
