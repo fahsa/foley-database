@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {EffectService} from '../effect.service';
+import { Component, OnInit } from '@angular/core';
+import { EffectService } from '../effect.service';
 import { Subject } from 'rxjs/Subject'
 
 @Component({
@@ -17,7 +17,7 @@ export class SearchEffectsComponent implements OnInit {
   constructor(private effectService: EffectService) {}
 
   ngOnInit() {
-    this.effectService.findEffects(this.startWith, this.endWith)
+    this.effectService.findByTag(this.startWith, this.endWith)
                         .subscribe(effects => this.effects = effects)
   }
 

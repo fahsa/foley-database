@@ -1,13 +1,24 @@
 <div *ngIf="category">
 	<div>
 		<!-- <label>Name: </label> {{category.$key}} -->
-		<button type="button" class="btn btn-default">{{category.$key}}</button>
+		<h4>{{category.$key}}</h4>
+		{{search(category.$key)}}
 	</div>
 
 	<!-- Deletion -->
 	<!-- <span class="btn btn-danger" (click)='deleteEffect()'>Delete</span> -->
 
-	<hr/>
+	<ul>
+		<li *ngFor="let effect of effects">
+			<h4>{{effect.name}} - Category: {{effect.category}} - <a href="assets/sfx/{{effect.category}}/{{effect.name}}" class="button" download>Download</a></h4>
+		</li>
+	</ul>
+
+	<hr />
+	<div *ngIf="effects?.length < 1">
+		<p>Not found!</p>
+	</div>
+
 
 	<button type="button" class="btn btn-default" (click)="goBack()">Go Back</button>
 </div>

@@ -78,7 +78,7 @@ export class EffectService {
   //   });
   // }
 
-  findEffects(start, end): Observable<any> {
+  findByTag(start, end): Observable<any> {
     return this.db.list(this.dbEffectPath, {
       query: {
         orderByChild: 'tag',
@@ -88,6 +88,16 @@ export class EffectService {
     }).map(_effects => Lodash.uniqBy(_effects, function(a) {
       return a.name
     }));
+  }
+
+  findByCategory(start, end): Observable<any> {
+    return this.db.list(this.dbEffectPath, {
+      query: {
+        orderByChild: 'category',
+        startAt: start,
+        endAt: end
+      }
+    })
   }
 
   // Deletion
