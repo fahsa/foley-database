@@ -97,7 +97,9 @@ export class EffectService {
         startAt: start,
         endAt: end
       }
-    })
+    }).map(_effects => Lodash.uniqBy(_effects, function(a) {
+      return a.name
+    }));
   }
 
   // Deletion
