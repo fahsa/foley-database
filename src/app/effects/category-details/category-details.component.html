@@ -2,15 +2,21 @@
 	<div>
 		<!-- <label>Name: </label> {{category.$key}} -->
 		<h4>{{category.$key}}</h4>
-		{{search(category.$key)}}
+		<!-- {{search(category.$key)}} -->
 	</div>
 
 	<!-- Deletion -->
 	<!-- <span class="btn btn-danger" (click)='deleteEffect()'>Delete</span> -->
 
-	<ul>
+	<!-- <ul>
 		<li *ngFor="let effect of effects">
 			<h4>{{effect.name}} - <a href="assets/sfx/{{effect.category}}/{{effect.name}}" class="button" download>Download</a></h4>
+		</li>
+	</ul> -->
+
+	<ul>
+		<li *ngFor="let effect of effects">
+			<h4>{{effect.name}} - <button class="btn btn-success" (click)="download()">Download</button></h4>
 		</li>
 	</ul>
 

@@ -35,7 +35,10 @@ export class CategoryDetailsComponent implements OnInit {
   getCategory(): void {
     const key = this.route.snapshot.paramMap.get('$key');
     this.effectService.getCategory(key)
-      .subscribe(category => this.category = category);
+      .subscribe(category => {
+        this.category = category
+        this.search(key)
+      });
   }
 
   search(queryText): void {
@@ -51,6 +54,10 @@ export class CategoryDetailsComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  download(): void {
+    console.log("yes")
   }
 
   // updateActive(isActive: boolean) {
