@@ -36,6 +36,11 @@ export class SearchEffectsComponent implements OnInit {
   }
 
   download(category, name): void {
+    var user = firebase.auth().currentUser;
+    if (!user) {
+      alert("Please login to download")
+      return;
+    }
     const storageRef = firebase.storage().ref()
     // console.log(storageRef.child())
     var itemRef = storageRef.child(category + '/' + name)
