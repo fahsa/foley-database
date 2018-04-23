@@ -16,6 +16,8 @@ import * as firebase from 'firebase';
 export class CreateEffectComponent implements OnInit {
 
   effect: Effect = new Effect();
+  categories: any;
+  default_category: "";
   submitted = false;
   selectedFiles: FileList
   currentFileUpload: FileUpload
@@ -27,6 +29,8 @@ export class CreateEffectComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.categories = this.effectService.getCategories();
+    // this.effect.category = 'Aeronautics'
   }
 
   newEffect(): void {
@@ -55,6 +59,11 @@ export class CreateEffectComponent implements OnInit {
 
    selectFile(event) {
      this.selectedFiles = event.target.files;
+   }
+
+   onChange(selected_category) {
+    this.effect.category = selected_category;
+    console.log(selected_category)
    }
 
    upload() {

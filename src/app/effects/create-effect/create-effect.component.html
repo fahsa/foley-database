@@ -26,12 +26,30 @@
 				name="name">
 		</div>
 
-		<div class="form-group">
+		<!-- <div class="form-group">
 			<label for="category">Category</label>
 			<input type="text"
 				class="form-control" id="category" required [(ngModel)]="effect.category"
 				name="category">
+		</div> -->
+
+		<div class="form-group">
+			<label for="category">Category</label>
+			<select class="form-control" [ngModel]="effect.category" (ngModelChange)="onChange($event)" name="category" required>
+				<option *ngFor="let category of categories | async" [ngValue]="category.$key">
+					{{category.$key}}
+				</option>
+			</select>
 		</div>
+
+		<!-- <select class="form-control"
+			    [ngModel]="selectedCourse"
+				(ngModelChange)="onChange($event)">
+		    <option *ngFor="let course of (courses$ | async)"
+			      [ngValue]="course">
+		      {{ course.description }}
+		    </option>
+		</select> -->
 
 		<div class="form-group">
 			<label for="tag">Keywords</label>
