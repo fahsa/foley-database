@@ -8,6 +8,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AuthService } from './auth.service';
+import { UploadFileService } from './effects/upload-file.service';
+
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 
@@ -27,7 +29,7 @@ import { EffectService } from './effects/effect.service';
     CategoryDetailsComponent,
     CreateEffectComponent,
     KeywordSearchComponent,
-    FilenameSearchComponent
+    FilenameSearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,7 @@ import { EffectService } from './effects/effect.service';
     AngularFireDatabaseModule, // for database
     AngularFireAuthModule, // for authentication
   ],
-  providers: [ EffectService, AuthService ],
+  providers: [ EffectService, AuthService, UploadFileService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}

@@ -1,6 +1,24 @@
 <h3>Add an Effect</h3>
 <div [hidden]="submitted" style="width: 300px;">
-	<form (ngSubmit)="onSubmit()">
+
+	<div *ngIf="currentFileUpload" class="progress" style="width:400px">
+		<div class="progress-bar progress-bar-info progress-bar-striped"
+			role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+			aria-valuemin="0" aria-valuemax="100"
+			[ngStyle]="{width:progress.percentage+'%'}">
+			{{progress.percentage}}%</div>
+	</div>
+
+	<label id="choose-file" class="btn btn-default"> <input type="file"
+		(change)="selectFile($event)">
+	</label>
+	<!-- <button type="submit" class="btn btn-info" [disabled]="!selectedFiles"
+		(click)="upload()">Upload</button>
+
+	<hr /> -->
+
+	<form #effectForm="ngForm" (ngSubmit)="onSubmit()">
+
 		<div class="form-group">
 			<label for="name">Name</label>
 			<input type="text"
@@ -16,14 +34,14 @@
 		</div>
 
 		<div class="form-group">
-			<label for="tag">Tags</label>
-			<p>Note: separate multiple tags with commas</p>
+			<label for="tag">Keywords</label>
+			<p>Note: separate multiple keywords with commas</p>
 			<input type="text"
 				class="form-control" id="tag" required [(ngModel)]="effect.tag"
 				name="tag">
 		</div>
 
-		<button type="submit" class="btn btn-success">Submit</button>
+		<button type="submit" class="btn btn-success" [disabled]="!effectForm.form.valid || !selectedFiles">Submit</button>
 	</form>
 </div>
 
