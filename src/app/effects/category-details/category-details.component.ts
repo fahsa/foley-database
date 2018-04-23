@@ -7,6 +7,8 @@ import { EffectService } from '../effect.service';
 import { Effect } from '../effect';
 import { Category } from '../category';
 
+import * as firebase from 'firebase';
+
 @Component({
   selector: 'category-details',
   templateUrl: './category-details.component.html',
@@ -56,9 +58,20 @@ export class CategoryDetailsComponent implements OnInit {
     this.location.back();
   }
 
-  download(): void {
-    console.log("yes")
-  }
+  download(category, name): void {
+    const storageRef = firebase.storage().ref()
+    // console.log(storageRef.child())
+    var itemRef = storageRef.child(category + '/' + name)
+    itemRef.getDownloadURL().then(function(url) {
+      // Download
+      var el = document.createElement('a');
+      el.download = url;
+      el.href = url;
+      document.body.appendChild(el);
+      el.click();
+      el.remove();
+    })
+  };
 
   // updateActive(isActive: boolean) {
   //   this.effectService.updateEffect(this.effect.$key, {active: isActive})

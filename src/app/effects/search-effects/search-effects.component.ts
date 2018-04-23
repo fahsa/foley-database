@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EffectService } from '../effect.service';
 import { Subject } from 'rxjs/Subject'
 
+import * as firebase from 'firebase';
+
 @Component({
   selector: 'app-search-effects',
   templateUrl: './search-effects.component.html',
@@ -32,5 +34,20 @@ export class SearchEffectsComponent implements OnInit {
         this.endWith.next(queryText + '\uf8ff')
       }
   }
+
+  download(category, name): void {
+    const storageRef = firebase.storage().ref()
+    // console.log(storageRef.child())
+    var itemRef = storageRef.child(category + '/' + name)
+    itemRef.getDownloadURL().then(function(url) {
+      // Download
+      var el = document.createElement('a');
+      el.download = url;
+      el.href = url;
+      document.body.appendChild(el);
+      el.click();
+      el.remove();
+    })
+  };
 
 }
