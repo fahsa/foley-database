@@ -16,7 +16,7 @@
 
 	<ul>
 		<li *ngFor="let effect of effects">
-			<h4>{{effect.name}} - <button class="btn btn-success" (click)="download(category.$key, effect.name)">Download</button></h4>
+			{{effect.name}} - <button class="btn btn-success" (click)="download(category.$key, effect.name)">Download</button>
 		</li>
 	</ul>
 

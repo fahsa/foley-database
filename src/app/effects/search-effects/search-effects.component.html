@@ -3,7 +3,7 @@
 
 <ul>
 	<li *ngFor="let effect of effects">
-		<h4>{{effect.name}} - Category: {{effect.category}} - <button class="btn btn-success" (click)="download(effect.category, effect.name)">Download</button></h4>
+		<span>{{effect.name}}</span> - Category: {{effect.category}} - <button class="btn btn-success" (click)="download(effect.category, effect.name)">Download</button>
 	</li>
 </ul>
 

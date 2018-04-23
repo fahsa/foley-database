@@ -1,0 +1,11 @@
+span {
+  font-weight: bold;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.btn-success {
+  padding: 3px 6px;
+}
