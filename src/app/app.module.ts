@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
+import { AuthService } from './auth.service';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 
 import { CategoryListComponent } from './effects/category-list/category-list.component';
-import { EffectsListComponent } from './effects/effects-list/effects-list.component';
+// import { EffectsListComponent } from './effects/effects-list/effects-list.component';
 import { CategoryDetailsComponent } from './effects/category-details/category-details.component';
 import { CreateEffectComponent } from './effects/create-effect/create-effect.component';
 
@@ -21,7 +23,7 @@ import { SearchEffectsComponent } from './effects/search-effects/search-effects.
   declarations: [
     AppComponent,
     CategoryListComponent,
-    EffectsListComponent,
+    // EffectsListComponent,
     CategoryDetailsComponent,
     CreateEffectComponent,
     SearchEffectsComponent
@@ -32,8 +34,9 @@ import { SearchEffectsComponent } from './effects/search-effects/search-effects.
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule, // for database
+    AngularFireAuthModule, // for authentication
   ],
-  providers: [ EffectService ],
+  providers: [ EffectService, AuthService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}
