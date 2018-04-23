@@ -90,6 +90,19 @@ export class EffectService {
     }));
   }
 
+  findByName(start, end): Observable<any> {
+    return this.db.list(this.dbEffectPath, {
+      query: {
+        orderByChild: 'name',
+        startAt: start,
+        endAt: end
+      }
+    })
+    .map(_effects => Lodash.uniqBy(_effects, function(a) {
+      return a.name
+    }));
+  }
+
   findByCategory(start, end): Observable<any> {
     return this.db.list(this.dbEffectPath, {
       query: {

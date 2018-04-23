@@ -5,12 +5,12 @@ import { Subject } from 'rxjs/Subject'
 import * as firebase from 'firebase';
 
 @Component({
-  selector: 'app-search-effects',
-  templateUrl: './search-effects.component.html',
-  styleUrls: ['./search-effects.component.css']
+  selector: 'filename-search',
+  templateUrl: './filename-search.component.html',
+  styleUrls: ['./filename-search.component.css']
 })
 
-export class SearchEffectsComponent implements OnInit {
+export class FilenameSearchComponent implements OnInit {
 
   startWith = new Subject()
   endWith = new Subject()
@@ -19,7 +19,7 @@ export class SearchEffectsComponent implements OnInit {
   constructor(private effectService: EffectService) {}
 
   ngOnInit() {
-    this.effectService.findByTag(this.startWith, this.endWith)
+    this.effectService.findByName(this.startWith, this.endWith)
                         .subscribe(effects => this.effects = effects)
   }
 

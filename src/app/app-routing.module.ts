@@ -1,8 +1,9 @@
 import { CategoryListComponent } from './effects/category-list/category-list.component';
+import { CategoryDetailsComponent }  from './effects/category-details/category-details.component';
 import { CreateEffectComponent } from './effects/create-effect/create-effect.component';
 // import { EffectsListComponent } from './effects/effects-list/effects-list.component';
-import { SearchEffectsComponent } from './effects/search-effects/search-effects.component';
-import { CategoryDetailsComponent }  from './effects/category-details/category-details.component';
+import { KeywordSearchComponent } from './effects/keyword-search/keyword-search.component';
+import { FilenameSearchComponent } from './effects/filename-search/filename-search.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'effects/:$key', component: CategoryDetailsComponent},
   // {path: 'effects', component: EffectsListComponent},
   {path: 'add', component: CreateEffectComponent},
-  {path: 'find', component: SearchEffectsComponent},
+  {path: 'searchByKeyword', component: KeywordSearchComponent},
+  {path: 'searchByFilename', component: FilenameSearchComponent}
 ];
 
 @NgModule({

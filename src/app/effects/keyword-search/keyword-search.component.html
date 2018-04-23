@@ -1,0 +1,13 @@
+<h3>Search Effects</h3>
+<input type="text" (keyup)="search($event)" placeholder="enter text" class="input">
+
+<ul>
+	<li *ngFor="let effect of effects">
+		<span>{{effect.name}}</span> - Category: {{effect.category}} - <button class="btn btn-success" (click)="download(effect.category, effect.name)">Download</button>
+	</li>
+</ul>
+
+<hr />
+<div *ngIf="effects?.length < 1">
+	<p>Not found!</p>
+</div>

@@ -15,9 +15,9 @@ import { CategoryListComponent } from './effects/category-list/category-list.com
 // import { EffectsListComponent } from './effects/effects-list/effects-list.component';
 import { CategoryDetailsComponent } from './effects/category-details/category-details.component';
 import { CreateEffectComponent } from './effects/create-effect/create-effect.component';
-
+import { KeywordSearchComponent } from './effects/keyword-search/keyword-search.component';
+import { FilenameSearchComponent } from './effects/filename-search/filename-search.component';
 import { EffectService } from './effects/effect.service';
-import { SearchEffectsComponent } from './effects/search-effects/search-effects.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { SearchEffectsComponent } from './effects/search-effects/search-effects.
     // EffectsListComponent,
     CategoryDetailsComponent,
     CreateEffectComponent,
-    SearchEffectsComponent
+    KeywordSearchComponent,
+    FilenameSearchComponent
   ],
   imports: [
     BrowserModule,
