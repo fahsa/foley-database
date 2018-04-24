@@ -1,27 +1,72 @@
 # FoleyDatabase
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
+Live version available at <https://foley-database.firebaseapp.com>  
 
-## Development server
+Login Credentials:  
+- Username: user@foleydatabase.com  
+- Password: GVSU_HNR499
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This project is built with Firebase, Angular 4, and AngularFire2 4.0
 
-## Code scaffolding
+## Getting Started
+These instructions are for running a downloaded copy of the project locally  for development and testing purposes.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
 
-## Build
+Install Angular CLI  
+`npm install -g @angular/cli`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Install Firebase CLI tools  
+`npm install -g firebase-tools`
 
-## Running unit tests
+Install Typings and TypeScript  
+`npm install -g typings`  
+`npm install -g typescript`  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Install AngularFire2 and Firebase
+`npm install angularfire2 firebase --save`
 
-## Running end-to-end tests
+### Create Firebase Application
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Create a [Firebase account](https://firebase.google.com/), login to the Firebase console and create a new application.
 
-## Further help
+Import the "foley-database-export.json" file in the project directory to the Firebase real-time database
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Upload the entirety of the "sound-effects" folder in the project directory to Firebase storage
+
+### Run Angular Application
+
+Move to project directory and start application  
+`cd foleydatabase`  
+`ng serve`
+
+Open browser with url <http://localhost:4200/> to view and test the application.
+
+## Deployment
+
+These instructions are for deploying the project on a live system.  
+
+### Link Angular Application to Firebase Application
+
+Login to firebase  
+`firebase login`
+
+Initialize project  
+`firebase init`
+
+Upon initializing, give the following answers to the questions that appear:  
+- Which Firebase CLI features? **Hosting**  
+- Select a default Firebase project? (Choose the application created above)  
+- What do you want to use as your public directory? **dist**  
+Configure as a single-page app? **no**  
+
+### Deploy
+
+To deploy using the existing application:  
+`firebase deploy`
+
+If you have made edits to the original Angular application, first create a new production folder:  
+`ng build --prod`
+
+Then deploy with  
+`firebase deploy`
