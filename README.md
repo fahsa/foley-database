@@ -1,12 +1,6 @@
 # FoleyDatabase
 
-Live version available at <https://foley-database.firebaseapp.com>  
-
-Login Credentials:  
-- Username: user@foleydatabase.com  
-- Password: GVSU_HNR499
-
-This project is built with Firebase, Angular 4, and AngularFire2 4.0.
+Web application for uploading and downloading audio files to/from a real-time searchable database. Built with Firebase, Angular 4, and AngularFire2 4.0.
 
 ## Getting Started
 These instructions are for running a downloaded copy of the project locally  for development and testing purposes.
